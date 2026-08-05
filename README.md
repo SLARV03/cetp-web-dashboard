@@ -18,22 +18,6 @@ Files are parsed **entirely in the browser**, in memory, for the current session
 - Only lightweight UI preferences (theme, time window, target values) are kept in
   `localStorage`. Clear them with **⚙ Config → Reset targets to defaults**.
 
-## Deploy
-
-It's a static site — the repository root is the deployable directory.
-
-**Vercel**
-
-1. Push this folder to GitHub.
-2. In Vercel: *New Project* → import the repo.
-3. Framework preset: **Other**. Build command: *(leave empty)*. Output directory: `.`
-4. Deploy. `index.html` is served at the root.
-
-No environment variables and no build step are needed.
-
-**Anywhere else** — GitHub Pages, Netlify, or any static host: serve the folder as-is. You can
-also just open `index.html` from disk; it works offline with no server.
-
 ## Using it
 
 1. Open the page.
@@ -75,26 +59,3 @@ src/
   bg_b64.txt      ← background image, base64
   build.py        ← inlines src/* into index.html
 ```
-
-**Rebuilding after editing `src/`:**
-
-```bash
-python3 src/build.py
-```
-
-That regenerates `index.html`. Python 3 is the only requirement — no npm, no bundler.
-
-## Notes & caveats
-
-- Reference discharge limits default to CPCB inland-surface values (COD 250, BOD 30, TSS 100
-  mg/L). **Replace them with the plant's actual consent limits** in ⚙ Config.
-- The F/M convention (COD basis, substrate at the primary outlet, full aeration volume) was
-  inferred from three years of plant data and reproduces the review panel's published target
-  bands, but has not yet been confirmed by the plant's engineers.
-- Where a parameter isn't logged (e.g. Cat-1 MBBR outlet, some Cat-3 SVI), the chart shows
-  "no data" rather than guessing.
-
-## Roadmap
-
-This is the browser demo. A React fork (Vite → Vercel, later Windows via Tauri and Android) is
-planned; `cetp_core.js` is written to port across unchanged.
