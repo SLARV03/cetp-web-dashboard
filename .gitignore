@@ -1,0 +1,24 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# never commit plant data
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.pptx
+*.docx
+
+# local build scratch
+__pycache__/
+*.pyc
+.vercel
+node_modules/
+
+# stray duplicate of index.html (safe to delete)
+CETP_Dashboard.html

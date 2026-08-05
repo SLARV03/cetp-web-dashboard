@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CETP-Baddi — Operations Dashboard</title>
+<style>__CSS__</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="logo">💧</div>
+      <div>
+        <h1>CETP-Baddi — Operations Dashboard</h1>
+        <div class="sub">Category wise effluent data analytics</div>
+      </div>
+    </div>
+    <span class="spacer"></span>
+    <button class="theme-toggle" id="themeToggle" title="Toggle light / dark" aria-label="Toggle light or dark theme">
+      <span class="ic moon">🌙</span><span class="ic sun">☀️</span><span class="knob" id="themeKnob">🌙</span>
+    </button>
+  </header>
+
+  <div id="loader">
+    <div class="drop" id="drop">
+      <div class="big">📊</div>
+      <h2>Drop your Excel workbooks here</h2>
+      <p><b>Category-1.xlsx&nbsp; · &nbsp;Category-2.xlsx&nbsp; · &nbsp;Category-3.xlsx</b><br>drag them in, or click to browse.</p>
+      <p class="sub">Everything runs in your browser — <b>nothing is uploaded and nothing is stored.</b><br>The files are read in memory for this session only; load them again next time you open the page.</p>
+      <div class="files" id="filetags">
+        <span class="tag" data-cat="Cat-1">Cat-1</span>
+        <span class="tag" data-cat="Cat-2">Cat-2</span>
+        <span class="tag" data-cat="Cat-3">Cat-3</span>
+      </div>
+      <div id="loaderr"></div>
+      <input type="file" id="fileinput" class="hidden" accept=".xlsx" multiple>
+    </div>
+  </div>
+
+  <div id="app" class="hidden">
+    <div id="restored" class="restored hidden"></div>
+    <div class="controls" id="controls"></div>
+    <div id="dash"></div>
+    <div class="footer">
+      Reference limits (CPCB inland-surface, editable in ⚙ Config): COD 250 · BOD 30 · TSS 100 mg/L · DO anoxic &lt;0.5.
+      F/M needs the aeration-tank volume (⚙ Config). Data are read locally from the workbooks; the dashboard changes nothing in your files.
+    </div>
+  </div>
+</div>
+<script>__CORE__</script>
+<script>__APP__</script>
+</body>
+</html>
